@@ -1,0 +1,48 @@
+#+TITLE: calibre layer
+
+#+TAGS: layer|tool
+
+[[file:img/calibre.png]]
+
+* Table of Contents                                       :TOC_4_gh:noexport:
+- [[#description][Description]]
+  - [[#features][Features:]]
+- [[#install][Install]]
+- [[#key-bindings][Key bindings]]
+
+* Description
+This layer adds support for e-book management software [[https://calibre-ebook.com/][calibre]], through emacs
+package [[https://github.com/chenyanming/calibredb.el][chenyanming/calibredb.el]].
+
+** Features:
+  - Powerful ebook dashboard
+  - Manage ebooks, actually not only ebooks
+  - Manage Ebook libraries
+  - Another bookmarks solution, by setting the tags and commnets
+  - Quick search, filter, make actions on items with ivy and helm
+  - Org-ref support
+
+* Install
+To use this configuration layer, add it to your =~/.spacemacs=. You will need to
+add =calibre= to the existing =dotspacemacs-configuration-layers= list in this
+file.
+
+An example of configuration is shown as bellow:
+#+begin_src elisp
+(defun dotspacemacs/user-config ()
+  (setq calibredb-root-dir "/mnt/data/GoogleDrive/Calibre Book Library")
+  (setq calibredb-db-dir (expand-file-name "metadata.db" calibredb-root-dir))
+  (setq calibredb-library-alist '(("/mnt/data/GoogleDrive/Calibre Book Library/")))
+  )
+#+end_src
+* TODO Key bindings
+ - Global Bindings
+   | Key Binding | Description         |
+   |-------------+---------------------|
+   | ~SPC a t c~ | calibredb dashboard |
+ - =calibredb-search-mode= Bindings
+   | Key Binding | Description                     |
+   |-------------+---------------------------------|
+   | ~SPC m o~   | calibredb-find-file             |
+   | ~SPC m O~   | calibredb-find-file-other-frame |
+   | ...         | ...                             |
