@@ -1,0 +1,3 @@
+[submodule "spacemacsOS"]
+	path = spacemacsOS
+	url = git@github.com:timor/spacemacsOS.git
